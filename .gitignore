@@ -1,0 +1,36 @@
+# 字节码与缓存
+__pycache__/
+*.py[cod]
+
+# 本地数据与缓存（顶级目录及子目录全面拦截）
+Memory_Temp/
+CoreMemory/
+录制/
+accounting_data/
+calendar_data/
+forum_data/
+todo_data/
+temp_whl/
+Demo_Image/*
+
+# 超大第三方依赖与二进制文件
+ffmpeg_bin/
+obs-studio/
+node-v*/
+*.exe
+*.dll
+*.zip
+*.tar.xz
+*.7z
+
+# 日志、多媒体废品与敏感配置
+*.log
+*log*.txt
+*.txt
+*.mp3
+*.wav
+*.mp4
+*.png
+*.jpg
+@AutomationLog.txt
+config.py

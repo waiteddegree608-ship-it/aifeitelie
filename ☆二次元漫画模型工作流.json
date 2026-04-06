@@ -1,0 +1,211 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 494743385168468,
+      "steps": 30,
+      "cfg": 6,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "IL-Gembyte_20Emerald.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1328,
+      "height": 1032,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "37",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "lowres, worst quality, bad quality, bad anatomy, simple background, blurry, lowres, cropped, extra limbs, bad anatomy, deformed hands, bad face, sketch, jpeg artifacts, signature, watermark, old, oldest, ",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "17": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "25": {
+    "inputs": {
+      "model": "wd-eva02-large-tagger-v3",
+      "threshold": 0.35,
+      "character_threshold": 0.85,
+      "replace_underscore": false,
+      "trailing_comma": false,
+      "exclude_tags": "",
+      "image": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "WD14Tagger|pysssss",
+    "_meta": {
+      "title": "WD14 Tagger 🐍"
+    }
+  },
+  "26": {
+    "inputs": {
+      "text_0": "1girl, solo, breasts, looking_at_viewer, blush, smile, shirt, large_breasts, black_hair, gloves, dress, thighhighs, hair_between_eyes, cleavage, collarbone, white_shirt, yellow_eyes, short_sleeves, thighs, parted_lips, lying, black_gloves, indoors, puffy_sleeves, black_thighhighs, hair_bun, clothes_lift, black_dress, puffy_short_sleeves, orange_eyes, maid, maid_headdress, double_bun, skindentation, on_side, garter_straps, eyes_visible_through_hair, lifted_by_self, couch, hand_on_own_face, dress_lift, asymmetrical_hair, head_rest, on_couch, elbow_rest, sangvis_ferri",
+      "text": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "27": {
+    "inputs": {
+      "image": "0C69523CE91AD06FB205934987BEE44D.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "30": {
+    "inputs": {
+      "purge_cache": true,
+      "purge_models": true,
+      "anything": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "LayerUtility: PurgeVRAM V2",
+    "_meta": {
+      "title": "图层工具：清除VRAM V2"
+    }
+  },
+  "33": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "37": {
+    "inputs": {
+      "separator": "",
+      "text1": [
+        "38",
+        0
+      ],
+      "text2": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "CR Text Concatenate",
+    "_meta": {
+      "title": "🔤 CR Text Concatenate"
+    }
+  },
+  "38": {
+    "inputs": {
+      "prompt": "masterpiece, best quality, ultra high res, hyper-detailed, anime realism, 8K, newest, "
+    },
+    "class_type": "CR Prompt Text",
+    "_meta": {
+      "title": "前缀可修改"
+    }
+  },
+  "39": {
+    "inputs": {
+      "prompt": "rio_\\(blue_archive\\), 1girl, solo, long_hair, breasts, looking_at_viewer, large_breasts, black_hair, long_sleeves, hair_ornament, red_eyes, very_long_hair, sitting, jacket, upper_body, parted_lips, hairclip, blunt_bangs, halo, black_jacket, sweater, turtleneck, chair, bright_pupils, white_pupils, ribbed_sweater, turtleneck_sweater, white_sweater, ringed_eyes"
+    },
+    "class_type": "CR Prompt Text",
+    "_meta": {
+      "title": "⚙️ CR Prompt Text"
+    }
+  }
+}
